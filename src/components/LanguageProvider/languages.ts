@@ -1,0 +1,375 @@
+
+export interface ILang {
+    header: {
+        main: string,
+        whitePaper: string,
+        blockChain: string,
+        support: string,
+        auth: string,
+    },
+    footer: {
+        agreement: string,
+        confidentiality: string,
+        address: string,
+        number: string,
+        contacts: {
+            general: string,
+
+            partnership: string,
+            pr: string
+        },
+        mainnet: {
+            active: string,
+            inactive: string,
+            status: string
+        },
+        language: string
+    },
+    general: {
+        title: string,
+        subtitle: string,
+        tgTitle: string,
+        tgSubtitle: string
+    },
+    medium: {
+        articles: string,
+        allArticles: string,
+
+    },
+    blockchain: {
+        title: string,
+        based: string,
+        transactions: string,
+        combine: string
+    },
+    app: {
+        title: string,
+        subtitle: string,
+        founder: string
+    },
+    storeLinks: {
+        download: string,
+        avalable: string,
+        upload: string
+    },
+    intouch: string,
+    about: {
+        title:string,
+        emission: {
+            full: string,
+            start: string,
+            capitalization: string,
+            rate: string,
+            emit: string
+        },
+        decription: {
+            first: string,
+            second: string
+        },
+        risks: string,
+        month: string,
+        billion: string
+    },
+    mediakit: {
+        title: string,
+        subtitle: string,
+        follow: string
+    },
+    styles: {
+        title: string,
+        logo: {
+            title: string,
+            mainVariant: string,
+            icon: string,
+            download: string,
+            archive: string,
+        },
+        mainColors: {
+            title: string,
+            main: string,
+            positive: string,
+            negative: string,
+            accent: string,
+            inactive: string,
+            gradient: string,
+        },
+        typography: {
+            title: string,
+            headers: string,
+            main: string,
+            subtitle: string,
+            font: string,
+            size: string,
+            fontVariants: string,
+
+        },
+        mobileLight: {
+            title: string,
+            bg: string,
+            text: string,
+            subtitle: string,
+            input: string, 
+            info: string,
+
+        },
+        mobileDark: {
+            title: string,
+
+        },
+        car: {
+            title: string,
+            download: string
+        }
+
+
+    }
+}
+
+export const languages: {'en': ILang, 'Russian': ILang} = {
+    'en': {
+        header: {
+            main: 'Main',
+            whitePaper: 'White Paper',
+            blockChain: 'Blockchain',
+            support: 'Support',
+            auth: 'Sign Up / Sign In'
+        },
+        footer: {
+            agreement: 'User agreement',
+            confidentiality: 'Confidentiality agreement',
+            number: 'Company Number: 222751',
+            address: 'Suit 103 Premiere Building, Albert Street, Victoria, Mahe, Republic Seychelles',
+            contacts: {
+                general: 'General questions',
+    
+                partnership: 'Partnership / Listing',
+                pr: 'PR & Marketing'
+            },
+            mainnet: {
+                active: 'Active',
+                inactive: 'Inactive',
+                status: 'Mainnet status:'
+            },
+            language: 'Language:'
+        },
+        general: {
+            title: "В ERA ваше устройство является валидатором сети, делегатором монет и пользователем продуктов одновременно",
+            subtitle: "Сеть ERA базируется на устройствах (телефоны, компьютеры), которые выделяют свободную память и интернет-соединение в продукте ERA Node, обеспечивая децентрализацию продуктам ERA Storage и ERA VPN. А достигнув стейк в 10000ERA (DPoS) и Статус 2 (Leader) в партнерской программе (PoA), устройства становятся валидаторами ERA Blockchain",
+            tgTitle: "Подпишитесь на наш Telegram",
+            tgSubtitle: "Будьте в курсе самых важных событий ERA"
+        },
+        medium: {
+            articles: 'Medium articles',
+            allArticles: 'View all',
+            
+        },
+        blockchain: {
+            based: "Based on fast and secure consensus engine - tendermint BFT",
+            transactions: "30 seconds transactions with minimal comision (0.3%, max 10ARTR)",
+            title: "Era Blockchain",
+            combine: "Combined consensus: Delegated Proof of Stake + Proof of Authority"
+        },
+        app: {
+            title: "Era Network App",
+            subtitle: "Era Network App is a great example is a prime example of implementing products using Era Blockchain",
+            founder: "From the Founder"
+        },
+        storeLinks: {
+            download: 'Download for',
+            avalable: 'Available in',
+            upload: 'Download from'
+        },
+        intouch: "Be in touch!",
+        about: {
+            title: "About coin",
+            emission: {
+                full: "Полная эмиссия: 4 000 000 000 ERA",
+                start: "Начальная эмиссия: 10 000 000 ERA",
+                capitalization: "Рыночная капитализация",
+                rate: "Курс ERA",
+                emit: "ERA эмитировано"
+            },
+            decription: {
+                first: "Тикер монеты: ERA. Монета выпущена на Era Blockchain специально для доступа к 4 децентрализованным продуктам приложения: ERA Storage, ERA VPN, ERA Node, DPoS Делегирование.",
+                second: "Предварительный период полной эмиссии 10 лет (2030 год). Эмиссия новых монет будет происходить посредством выплаты вознаграждений делегаторам, которые своим стейком посодействовали пользователям стать валидаторами и увеличили ликвидность монеты."
+            },
+            risks: "Для снижения рисков гиперэмиссии были определены периоды планового уменьшения вознаграждений делегаторам:",
+            month: "mon",
+            billion: "B"
+        },
+        mediakit: {
+            title: "Mediakit",
+            subtitle: "Corporate identity, logos, colors, fonts",
+            follow: "Details"
+        },
+        styles: {
+            title: "Стиль Era coin",
+            logo: {
+                title: "Логотип",
+                mainVariant: "Основной вариант с текстом",
+                icon: "Иконка",
+                download: "Скачать логотип",
+                archive: "ZIP архив, файлы в формате SVG. 124КБ",
+            },
+            mainColors: {
+                title: "Общие цвета",
+                main: "Основной цвет",
+                positive: "Позитивное состояние",
+                negative: "Негативное состояние",
+                accent: "Акцентный цвет",
+                inactive: "Неактивная кнопка",
+                gradient: "Основной градиент",
+            },
+            typography: {
+                title: "Типографика",
+                headers: "Заголовки",
+                main: "Основной текст",
+                subtitle: "Вспомогательный текст",
+                font: "Шрифт",
+                size: "Рамеры шрифтов",
+                fontVariants: "Варианты шрифтов",
+    
+            },
+            mobileLight: {
+                title: "Цвета мобильного приложения (светлая тема)",
+                bg: "Цвет фона",
+                text: "Цвет текста",
+                subtitle: "Вспомогательный текст",
+                input: "Поле ввода", 
+                info: "Фон информации",
+    
+            },
+            mobileDark: {
+                title: "Цвета мобильного приложения (тёмная тема)",
+    
+            },
+            car: {
+                title: "Оклейка автомобиля",
+                download: "Скачать наклейку"
+            }
+    },
+    },
+    'Russian': {
+        header: {
+            main: 'Главная',
+            whitePaper: 'White Paper',
+            blockChain: 'Blockchain',
+            support: 'Поддержка',
+            auth: 'Вход / Регистрация'
+        },
+        footer: {
+            agreement: 'Пользовательское соглашение',
+            confidentiality: 'Политика конфиденциальности',
+            number: 'Company Number: 222751',
+            address: 'Suit 103 Premiere Building, Albert Street, Victoria, Mahe, Republic Seychelles',
+            contacts: {
+                general: 'Общие вопросы',
+    
+                partnership: 'Партнёрство / листинг',
+                pr: 'PR & Маркетинг'
+            },
+            mainnet: {
+                active: 'Активен',
+                inactive: 'Не активен',
+                status: 'Статус mainnet:'
+            },
+            language: 'Язык:'
+        },
+        general: {
+            title: "В ERA ваше устройство является валидатором сети, делегатором монет и пользователем продуктов одновременно",
+            subtitle: "Сеть ERA базируется на устройствах (телефоны, компьютеры), которые выделяют свободную память и интернет-соединение в продукте ERA Node, обеспечивая децентрализацию продуктам ERA Storage и ERA VPN. А достигнув стейк в 10000ERA (DPoS) и Статус 2 (Leader) в партнерской программе (PoA), устройства становятся валидаторами ERA Blockchain",
+            tgTitle: "Подпишитесь на наш Telegram",
+            tgSubtitle: "Будьте в курсе самых важных событий ERA"
+        },
+        medium: {
+            articles: 'Статьи Medium',
+            allArticles: 'Все статьи',
+            
+        },
+        blockchain: {
+            based: "Базируется на надежном и быстром консенсус движке tendermint BFT",
+            transactions: "Транзакции до 30 секунд с минимальной комиссией (0,3%, макс. 10ARTR)",
+            title: "Era Blockchain",
+            combine: "Комбинированный консенсус: Delegated Proof of Stake + Proof of Authority"
+        },
+        app: {
+            title: "Приложение Era Network",
+            subtitle: "Отличным примером реализации децентрализованных продуктов на Era Blockchain служит приложение Era Network",
+            founder: "От основателя"
+        },
+        storeLinks: {
+            download: 'Скачать для',
+            avalable: 'Доступно в',
+            upload: 'Загрузите в'
+        },
+        intouch: "Будь в теме!",
+        about: {
+            title: "О монете",
+            emission: {
+                full: "Полная эмиссия: 4 000 000 000 ERA",
+                start: "Начальная эмиссия: 10 000 000 ERA",
+                capitalization: "Рыночная капитализация",
+                rate: "Курс ERA",
+                emit: "ERA эмитировано"
+            },
+            decription: {
+                first: "Тикер монеты: ERA. Монета выпущена на Era Blockchain специально для доступа к 4 децентрализованным продуктам приложения: ERA Storage, ERA VPN, ERA Node, DPoS Делегирование.",
+                second: "Предварительный период полной эмиссии 10 лет (2030 год). Эмиссия новых монет будет происходить посредством выплаты вознаграждений делегаторам, которые своим стейком посодействовали пользователям стать валидаторами и увеличили ликвидность монеты."
+            },
+            risks: "Для снижения рисков гиперэмиссии были определены периоды планового уменьшения вознаграждений делегаторам:",
+            month: "мес",
+            billion: "млрд"
+        },
+        mediakit: {
+            title: "Медиакит",
+            subtitle: "Фирменный стиль, логотипы, цвета, шрифты",
+            follow: "Перейти"
+        },
+        styles: {
+            title: "Стиль Era coin",
+            logo: {
+                title: "Логотип",
+                mainVariant: "Основной вариант с текстом",
+                icon: "Иконка",
+                download: "Скачать логотип",
+                archive: "ZIP архив, файлы в формате SVG. 124КБ",
+            },
+            mainColors: {
+                title: "Общие цвета",
+                main: "Основной цвет",
+                positive: "Позитивное состояние",
+                negative: "Негативное состояние",
+                accent: "Акцентный цвет",
+                inactive: "Неактивная кнопка",
+                gradient: "Основной градиент",
+            },
+            typography: {
+                title: "Типографика",
+                headers: "Заголовки",
+                main: "Основной текст",
+                subtitle: "Вспомогательный текст",
+                font: "Шрифт",
+                size: "Рамеры шрифтов",
+                fontVariants: "Варианты шрифтов",
+    
+            },
+            mobileLight: {
+                title: "Цвета мобильного приложения (светлая тема)",
+                bg: "Цвет фона",
+                text: "Цвет текста",
+                subtitle: "Вспомогательный текст",
+                input: "Поле ввода", 
+                info: "Фон информации",
+    
+            },
+            mobileDark: {
+                title: "Цвета мобильного приложения (тёмная тема)",
+    
+            },
+            car: {
+                title: "Оклейка автомобиля",
+                download: "Скачать наклейку"
+            }
+    },
+}
+}
