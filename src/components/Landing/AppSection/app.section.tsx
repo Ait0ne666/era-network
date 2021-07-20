@@ -2,7 +2,8 @@ import { useLanguage } from "../../LanguageProvider/language.provider"
 import { SectionContainer, SectionTitle, DevicesImageContainer, FounderButton, SectionInfo, SectionSubtitle } from "./app.section.styles"
 
 
-import {ReactComponent as PlaySVG} from '../../../assets/play_black.svg' 
+import {ReactComponent as PlaySVG} from '../../../assets/play_black.svg'
+import React from "react"
 
 
 

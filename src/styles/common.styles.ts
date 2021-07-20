@@ -55,3 +55,27 @@ export const PageContainer = styled.div`
   width: 100%;
   max-width: 1200px;
 `
+
+export const Label = styled.label`
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 4px;
+`
+
+export const Input = styled.input`
+    // width: 380px;
+    width:100%;
+    height: 68px;
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 12px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 24px 25px;
+`

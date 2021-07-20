@@ -11,6 +11,9 @@ import Footer from "../Footer/footer";
 import { useEffect } from "react";
 import { getMediumArticles } from "../../redux/content/content.actions";
 import CorporateStylesPage from "../../pages/CorporateStyles/corporateStyles";
+import HelpSection from "../Landing/HelpSection/help.section";
+import AuthSection from "../Landing/AuthSection/auth.section";
+
 
 
 
@@ -46,6 +49,12 @@ const Layout: React.FC = () => {
             </Route>
             <Route exact path="/styles">
               <CorporateStylesPage />
+            </Route>
+            <Route exact path="/help">
+              <HelpSection/>
+            </Route>
+            <Route exact path="/auth">
+              <AuthSection/>
             </Route>
           </Switch>
           <Footer />

@@ -6,6 +6,8 @@ export interface ILang {
         blockChain: string,
         support: string,
         auth: string,
+        signIn: string,
+        signUp: string
     },
     footer: {
         agreement: string,
@@ -25,6 +27,23 @@ export interface ILang {
         },
         language: string
     },
+    helpsection:{
+        email_title:string,
+        name_title:string,
+        mes_title: string,
+        email_placeholder: string,
+        name_placeholder: string,
+        mes_placeholder: string
+    },
+    auth:{
+        login_title: string,
+        password_title: string,
+        login_placeholder: string,
+        password_placeholder: string,
+        inscription: string,
+        submitButton: string,
+        changePassword: string
+    },
     general: {
         title: string,
         subtitle: string,
@@ -34,7 +53,6 @@ export interface ILang {
     medium: {
         articles: string,
         allArticles: string,
-
     },
     blockchain: {
         title: string,
@@ -132,7 +150,9 @@ export const languages: {'en': ILang, 'Russian': ILang} = {
             whitePaper: 'White Paper',
             blockChain: 'Blockchain',
             support: 'Support',
-            auth: 'Sign Up / Sign In'
+            auth: 'Sign Up / Sign In',
+            signIn: 'Sign Up',
+            signUp: 'Sign In'
         },
         footer: {
             agreement: 'User agreement',
@@ -151,6 +171,23 @@ export const languages: {'en': ILang, 'Russian': ILang} = {
                 status: 'Mainnet status:'
             },
             language: 'Language:'
+        },
+        helpsection:{
+            email_title:"Email",
+            name_title:"First name",
+            mes_title: "Message",
+            email_placeholder:"",
+            name_placeholder:"",
+            mes_placeholder:""
+        },
+        auth:{
+            login_title: "Press _____",
+            password_title: "Press password",
+            login_placeholder: "",
+            password_placeholder: "",
+            inscription:"",
+            submitButton: "Sign In",
+            changePassword: "Change password???"
         },
         general: {
             title: "В ERA ваше устройство является валидатором сети, делегатором монет и пользователем продуктов одновременно",
@@ -255,7 +292,9 @@ export const languages: {'en': ILang, 'Russian': ILang} = {
             whitePaper: 'White Paper',
             blockChain: 'Blockchain',
             support: 'Поддержка',
-            auth: 'Вход / Регистрация'
+            auth: 'Вход / Регистрация',
+            signIn: 'Вход',
+            signUp: 'Регистрация'
         },
         footer: {
             agreement: 'Пользовательское соглашение',
@@ -274,6 +313,23 @@ export const languages: {'en': ILang, 'Russian': ILang} = {
                 status: 'Статус mainnet:'
             },
             language: 'Язык:'
+        },
+        helpsection:{
+            email_title:"Почта",
+            name_title:"Имя",
+            mes_title: "Сообщение",
+            email_placeholder:"mail@gmail.com",
+            name_placeholder:"Иван",
+            mes_placeholder:"Введите текст вашего обращения"
+        },
+        auth:{
+            login_title: "Введите номер кошелька или Никнейм",
+            password_title: "Введите пароль",
+            login_placeholder: "ERA-XXXX",
+            password_placeholder: "Password-123",
+            inscription: "Убедитесь, что вы посещаете правильный URL-адрес",
+            submitButton: "Войти",
+            changePassword: "Установить пароль"
         },
         general: {
             title: "В ERA ваше устройство является валидатором сети, делегатором монет и пользователем продуктов одновременно",

@@ -30,6 +30,7 @@ import { changeLanguage } from "../../redux/settings/settings.actions";
 import { ReactComponent as LogoSVG } from "../../assets/logo.svg";
 import { useLanguage } from "../LanguageProvider/language.provider";
 import { CustomButton } from "../../styles/common.styles";
+import React from "react";
 
 
 

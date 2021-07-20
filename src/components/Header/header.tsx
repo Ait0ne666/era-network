@@ -15,6 +15,7 @@ import { ReactComponent as LogoSVG } from "../../assets/logo.svg";
 import { ReactComponent as CaretDownSVG } from "../../assets/caret-down.svg";
 import { useLanguage } from "../LanguageProvider/language.provider";
 import { changeLanguage } from "../../redux/settings/settings.actions";
+import React from "react";
 
 const Header: React.FC = () => {
   const { currentLanguage, language } = useLanguage();
