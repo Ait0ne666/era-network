@@ -57,6 +57,20 @@ export const FormContainer = styled.form`
     
 `
 
+export const TextArea = styled.textarea`
+    width:100%;
+    height: 204px;
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 12px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 24px 25px;
+`
+
 export const Submit = styled.button`
 width:100%;
 height: 48px;

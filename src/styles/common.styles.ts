@@ -66,7 +66,6 @@ export const Label = styled.label`
 `
 
 export const Input = styled.input`
-    // width: 380px;
     width:100%;
     height: 68px;
     border: 1px solid #C4C4C4;

@@ -4,7 +4,7 @@ import {
     HelpWrapper,
     InputContainer,
     Error,
-    Submit, SpinnerBox
+    Submit, SpinnerBox, TextArea
 } from "./help.section.styles";
 import React, {useState} from "react";
 import {Formik} from "formik";
@@ -75,7 +75,7 @@ const HelpSection: React.FC = ()=>{
                                     </InputContainer>
                                     <InputContainer>
                                         <Label>{language.helpsection.mes_title}</Label>
-                                        <Input
+                                        <TextArea
                                             type="text"
                                             name="message"
                                             value={values.message}
