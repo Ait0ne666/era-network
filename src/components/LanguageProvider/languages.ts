@@ -120,8 +120,6 @@ export interface ILang {
             title: string,
             download: string
         }
-
-
     }
 }
 
