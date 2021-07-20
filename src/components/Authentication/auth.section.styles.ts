@@ -1,4 +1,19 @@
 import styled from 'styled-components'
+
+export const PageWrapper = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: default;
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position-y: -10%;
+`
+
+
 export const AuthWrapper = styled.div`
     width: 760px;
     height: 648px;
@@ -8,10 +23,9 @@ export const AuthWrapper = styled.div`
     border-color: #E5E5E5;
     background: #FFFFFF;
     border-radius: 12px;
-    width: 760px;
-    height: 648px;
+    margin-top: 120px;
+    margin-bottom: 100px;
 `
-
 export const TitleBox = styled.div`
     margin-bottom: 41px;
     text-align:center
@@ -141,6 +155,7 @@ export const Submit = styled.button`
     
     background: #FDF1A5;
     border-radius: 12px;
+    
    
 `
 

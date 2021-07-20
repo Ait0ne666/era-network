@@ -4,17 +4,17 @@ import {
     HelpWrapper,
     InputContainer,
     Error,
-    Submit, SpinnerBox, TextArea
+    Submit, SpinnerBox, TextArea, HelpContainer, PageWrapper
 } from "./help.section.styles";
 import React, {useState} from "react";
 import {Formik} from "formik";
-import {useLanguage} from "../../LanguageProvider/language.provider";
+import {useLanguage} from "../LanguageProvider/language.provider";
 import * as yup from "yup";
-import {Input, PageContainer, PageWrapper, Label} from "../../../styles/common.styles";
+import {Input, Label} from "../../styles/common.styles";
 import {Spinner} from "@chakra-ui/spinner";
 
 const validationSchema = yup.object().shape({
-    name : yup.string().trim().required("Обязательное поле"),
+    name: yup.string().trim().required("Обязательное поле"),
     email: yup
         .string()
         .trim()
@@ -23,19 +23,21 @@ const validationSchema = yup.object().shape({
     message: yup.string().trim().required("Обязательное поле"),
 });
 
-const HelpSection: React.FC = ()=>{
-    const { currentLanguage, language } = useLanguage();
+const HelpSection: React.FC = () => {
+    const {currentLanguage, language} = useLanguage();
     const [loading, setLoading] = useState(false)
-    const handleSubmit = async(values: {name:string, email: string; message: string })=>{
+    const handleSubmit = async (values: { name: string, email: string; message: string }) => {
         setLoading(true);
 
-        setTimeout(()=>setLoading(false), 1000);
+        setTimeout(() => setLoading(false), 1000);
     }
 
     return (
-        <PageWrapper>
-            <PageContainer>
-                <HelpWrapper>
+        <PageWrapper style={{
+            backgroundImage: `url('bg.png')`
+        }}>
+            <HelpWrapper>
+                <HelpContainer>
                     <HelpTitle>Поддержка</HelpTitle>
                     <Formik
                         initialValues={{
@@ -46,7 +48,7 @@ const HelpSection: React.FC = ()=>{
                         onSubmit={handleSubmit}
                         validationSchema={validationSchema}
                     >
-                        {({handleChange, handleSubmit, values, errors})=>(
+                        {({handleChange, handleSubmit, values, errors}) => (
                             <>
                                 <FormContainer onSubmit={handleSubmit}>
                                     <InputContainer>
@@ -76,7 +78,6 @@ const HelpSection: React.FC = ()=>{
                                     <InputContainer>
                                         <Label>{language.helpsection.mes_title}</Label>
                                         <TextArea
-                                            type="text"
                                             name="message"
                                             value={values.message}
                                             onChange={handleChange}
@@ -87,7 +88,7 @@ const HelpSection: React.FC = ()=>{
                                     <Submit>
                                         <SpinnerBox>
                                             {
-                                                loading && <Spinner size='sm' color='#004181'  />
+                                                loading && <Spinner size='sm' color='#004181'/>
                                             }
                                         </SpinnerBox>
                                         Отправить
@@ -97,10 +98,11 @@ const HelpSection: React.FC = ()=>{
                             </>
                         )}
                     </Formik>
-                </HelpWrapper>
-            </PageContainer>
+                </HelpContainer>
+            </HelpWrapper>
         </PageWrapper>
-        )
+
+    )
 }
 
 

@@ -1,6 +1,21 @@
 import styled from 'styled-components'
 
+
+export const PageWrapper = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: default;
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position-y: -10%;
+`
+
 export const HelpWrapper = styled.div`
+  
     width: 460px;
     height: 735px;
     background: #FFFFFF;
@@ -8,9 +23,13 @@ export const HelpWrapper = styled.div`
     padding: 39px 40px 85px 40px;
     box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
     border-color: #E5E5E5;
-    borer-width 1;
+    border-width 1;
     margin: 2em auto;
+    margin-top: 120px;
+    margin-bottom: 100px;
 `
+
+
 
 export const HelpContainer = styled.div`
     width: 100%;

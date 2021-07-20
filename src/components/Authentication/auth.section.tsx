@@ -1,10 +1,10 @@
-import {Input, Label, PageContainer, PageWrapper} from "../../../styles/common.styles";
+import {Input, Label} from "../../styles/common.styles";
 import {Formik} from "formik";
 import React, {useState} from "react";
-import {useLanguage} from "../../LanguageProvider/language.provider";
-import infoImg from '../../../assets/InfoImg.png'
-import playImg from '../../../assets/PlayImg.png';
-import lockImg from '../../../assets/Lock.png';
+import {useLanguage} from "../LanguageProvider/language.provider";
+import infoImg from '../../assets/InfoImg.png'
+import playImg from '../../assets/PlayImg.png';
+import lockImg from '../../assets/Lock.png';
 import {Spinner} from '@chakra-ui/spinner'
 
 import {
@@ -14,12 +14,12 @@ import {
     ChangePassword,
     Submit,
     Error,
-    Inscription, InlineImg, LinkBox, LinkButton, TitleBox, ActiveLink, SlashTitle, UnactiveLink, LinkText, LinkImg, SpinnerBox
+    Inscription, InlineImg, LinkBox, LinkButton, TitleBox, ActiveLink, SlashTitle, UnactiveLink, LinkText, LinkImg, SpinnerBox,PageWrapper
 } from "./auth.section.styles";
 
 import * as yup from "yup";
 
-import {loginUser} from "../../../redux/user/user.actions";
+import {loginUser} from "../../redux/user/user.actions";
 const validationSchema = yup.object().shape({
     login : yup.string().trim().required("Обязательное поле"),
     password: yup
@@ -41,8 +41,11 @@ const AuthSection: React.FC = () => {
 
 
     return(
-        <PageWrapper>
-            <PageContainer>
+        <PageWrapper
+            style={{
+        backgroundImage: `url('bg.png')`
+    }}>
+
                 <AuthWrapper>
 
                     <TitleBox>
@@ -109,7 +112,7 @@ const AuthSection: React.FC = () => {
                         )}
                     </Formik>
                 </AuthWrapper>
-            </PageContainer>
+
         </PageWrapper>
     )
 }
