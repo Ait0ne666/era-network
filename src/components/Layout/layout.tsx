@@ -15,6 +15,7 @@ import HelpSection from "../Help/help.section";
 import AuthSection from "../Authentication/auth.section";
 import Authentication from "../../pages/Authentication/authentication";
 import Help from "../../pages/Help/help";
+import RegSection from "../Authentication/registration.section";
 
 
 
@@ -57,6 +58,9 @@ const Layout: React.FC = () => {
             </Route>
             <Route exact path="/auth">
               <Authentication/>
+            </Route>
+            <Route exact path="/reg">
+              <RegSection/>
             </Route>
           </Switch>
           <Footer />

@@ -16,7 +16,7 @@ export const PageWrapper = styled.div`
 
 export const AuthWrapper = styled.div`
     width: 760px;
-    height: 648px;
+    min-height: 648px;
     
     padding: 40px 132px;
     box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
@@ -198,4 +198,20 @@ flex-direction: row;
 justify-content: center;
 align-items: center;
 margin-right: 4px;
+`
+
+export const CheckboxContainer = styled.div`
+    width: 100%
+    display: flex;
+    flex-direction: row;
+    justify-content: flex start;
+`
+
+export const Checkbox = styled.input`
+    width: 18px;
+    height: 18px;
+    type: checkbox;
+    border: 1.5px solid #1B1919;
+    border-radius: 3px;
+    margin-right: 11px;
 `

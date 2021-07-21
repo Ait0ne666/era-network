@@ -20,6 +20,7 @@ import {
 import * as yup from "yup";
 
 import {loginUser} from "../../redux/user/user.actions";
+import {Link} from "react-router-dom";
 const validationSchema = yup.object().shape({
     login : yup.string().trim().required("Обязательное поле"),
     password: yup
@@ -51,7 +52,7 @@ const AuthSection: React.FC = () => {
                     <TitleBox>
                         <ActiveLink>{language.header.signIn}</ActiveLink>
                         <SlashTitle>/</SlashTitle>
-                        <UnactiveLink>{language.header.signUp}</UnactiveLink>
+                        <UnactiveLink><Link to="/reg">{language.header.signUp}</Link></UnactiveLink>
                     </TitleBox>
                     <Inscription>
                         <InlineImg src={infoImg} />
