@@ -1,8 +1,8 @@
-import AuthSection from "../../components/Authentication/auth.section";
+import Auth from "../../components/Authentication/auth";
 
 
 const Authentication: React.FC = ()=>{
-    return <AuthSection/>
+    return <Auth/>
 }
 
 export default Authentication

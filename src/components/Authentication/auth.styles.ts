@@ -15,6 +15,7 @@ export const PageWrapper = styled.div`
 
 
 export const AuthWrapper = styled.div`
+    // width: 100%
     width: 760px;
     min-height: 648px;
     
@@ -33,16 +34,7 @@ export const TitleBox = styled.div`
 
 
 
-export const ActiveLink = styled.span`
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 32px;
-    line-height: 39px;
 
-    
-    color: #1B5CF5;
-`
 
 export const SlashTitle = styled.span`
     margin: auto 24px;
@@ -54,15 +46,18 @@ export const SlashTitle = styled.span`
     color: #1B5CF5;
 `
 
-export const UnactiveLink = styled.span`
+interface ActiveLink{
+    active?: boolean;
+}
+
+export const ChangeLink = styled.span<ActiveLink>`
     font-family: Montserrat;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 600;
     font-size: 32px;
     line-height: 39px;
-
-    
-    color: #C4C4C4;
+    color: ${props=> (props.active) ? "#C4C4C4" : "#1B5CF5"} ;
+    ${props=> (props.active) ? "cursor: pointer":""}
 `
 
 
@@ -81,48 +76,6 @@ export const Inscription = styled.span`
 
 export const InlineImg = styled.img`
     margin-right:8px;
-  
-`
-
-export const LinkBox = styled.div`
-display:flex;
-    align-items:center;
-    height: 48px;
-    background: #EEEDF5;
-    border-radius: 8px;
-    margin-bottom: 40px;
-`
-
-export const LinkText = styled.div`
-display:flex;
-    align-items:center;
-    flex-grow:1;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 20px;
-    
-    color: #C4C4C4;
-`
-
-
-export const LinkImg = styled.img`
-    margin: auto 24px;
-    
-`
-
-
-export const LinkButton = styled.div`
-    width: 48px;
-    height: 48px;
-    background: #1B5CF5;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items:center;
-    
 `
 
 export const InputContainer = styled.div`
@@ -193,25 +146,10 @@ export const Error= styled.span`
     margin-top: 4px;
 `
 export const SpinnerBox = styled.div`
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-margin-right: 4px;
-`
-
-export const CheckboxContainer = styled.div`
-    width: 100%
     display: flex;
     flex-direction: row;
-    justify-content: flex start;
+    justify-content: center;
+    align-items: center;
+    margin-right: 4px;
 `
 
-export const Checkbox = styled.input`
-    width: 18px;
-    height: 18px;
-    type: checkbox;
-    border: 1.5px solid #1B1919;
-    border-radius: 3px;
-    margin-right: 11px;
-`
