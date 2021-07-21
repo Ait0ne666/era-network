@@ -2,8 +2,7 @@ export interface UserModel {
     id: Number,
     username: String,
     email: String,
-    telegram?: String 
-    
+    telegram?: String
 }
 
 
@@ -21,9 +20,9 @@ export class User implements UserModel {
         email,
         telegram
     }: UserModel) {
-        this.id = id,
-        this.username = username,
-        this.email = email,
+        this.id = id
+        this.username = username
+        this.email = email
         this.telegram = telegram
     }
 

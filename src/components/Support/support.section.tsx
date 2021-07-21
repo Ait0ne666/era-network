@@ -1,17 +1,22 @@
 import {
     FormContainer,
-    HelpTitle,
-    HelpWrapper,
+    SupportTitle,
+    SupportWrapper,
     InputContainer,
     Error,
-    Submit, SpinnerBox, TextArea, HelpContainer, PageWrapper
-} from "./help.section.styles";
-import React, {useState} from "react";
+    Submit, SpinnerBox, TextArea, SupportContainer, PageWrapper
+} from "./support.section.styles";
+import React, {useEffect, useState} from "react";
 import {Formik} from "formik";
 import {useLanguage} from "../LanguageProvider/language.provider";
 import * as yup from "yup";
 import {Input, Label} from "../../styles/common.styles";
 import {Spinner} from "@chakra-ui/spinner";
+import { useToast } from "@chakra-ui/react";
+import {useDispatch, useSelector} from "react-redux";
+import {supportSelectors} from "../../redux/support/support.selectors";
+import {send} from "../../data/data-sources/support_remote_data_source";
+import {clearSupportError, sendSupport} from "../../redux/support/support.actions";
 
 const validationSchema = yup.object().shape({
     name: yup.string().trim().required("Обязательное поле"),
@@ -23,22 +28,51 @@ const validationSchema = yup.object().shape({
     message: yup.string().trim().required("Обязательное поле"),
 });
 
-const HelpSection: React.FC = () => {
+const SupportSection: React.FC = () => {
     const {currentLanguage, language} = useLanguage();
-    const [loading, setLoading] = useState(false)
-    const handleSubmit = async (values: { name: string, email: string; message: string }) => {
-        setLoading(true);
+    const loading = useSelector(supportSelectors.loading);
+    const error = useSelector(supportSelectors.error);
+    const success = useSelector(supportSelectors.success);
+    const dispatch = useDispatch();
+    const toast = useToast()
+    const showErrorToast = (message: String, status: "error" | "info" | "warning" | "success", title: string) => {
+        toast({
+            title: title ? title : "Ошибка",
+            description: message,
+            position: "top-right",
+            status: status ? status : "error",
+            duration: 8000,
+            isClosable: true,
+        });
+    };
 
-        setTimeout(() => setLoading(false), 1000);
+    const handleSubmit = async (values: { name: string, email: string; message: string }) => {
+        dispatch(sendSupport(values))
     }
+
+    useEffect(()=>{
+        if (error )
+            showErrorToast('','error',error);
+        },
+        [error])
+
+    useEffect(()=>{
+            if (success )
+                showErrorToast('','success', success);
+        },
+        [success])
+
+    useEffect(()=>{
+        return ()=>{dispatch(clearSupportError())}
+    },)
 
     return (
         <PageWrapper style={{
             backgroundImage: `url('bg.png')`
         }}>
-            <HelpWrapper>
-                <HelpContainer>
-                    <HelpTitle>Поддержка</HelpTitle>
+            <SupportWrapper>
+                <SupportContainer>
+                    <SupportTitle>Поддержка</SupportTitle>
                     <Formik
                         initialValues={{
                             name: "",
@@ -98,12 +132,12 @@ const HelpSection: React.FC = () => {
                             </>
                         )}
                     </Formik>
-                </HelpContainer>
-            </HelpWrapper>
+                </SupportContainer>
+            </SupportWrapper>
         </PageWrapper>
 
     )
 }
 
 
-export default HelpSection
+export default SupportSection
