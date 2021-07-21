@@ -11,11 +11,12 @@ import Footer from "../Footer/footer";
 import { useEffect } from "react";
 import { getMediumArticles } from "../../redux/content/content.actions";
 import CorporateStylesPage from "../../pages/CorporateStyles/corporateStyles";
-import HelpSection from "../Help/help.section";
+import SupportSection from "../Support/support.section";
 import AuthSection from "../Authentication/auth.section";
 import Authentication from "../../pages/Authentication/authentication";
-import Help from "../../pages/Help/help";
 import { userSelectors } from "../../redux/user/user.selectors";
+import Support from "../../pages/Support/support";
+// import RegSection from "../Authentication/registration.section";
 
 
 
@@ -56,8 +57,8 @@ const Layout: React.FC = () => {
             <Route exact path="/styles">
               <CorporateStylesPage />
             </Route>
-            <Route exact path="/support">
-              <Help/>
+            <Route exact path="/help">
+              <Support/>
             </Route>
 
             <Route exact path="/auth">
@@ -67,6 +68,9 @@ const Layout: React.FC = () => {
                 :<Authentication/>
               }
             </Route>
+            {/* <Route exact path="/reg">
+              <RegSection/>
+            </Route> */}
           </Switch>
           <Footer />
         </ChakraProvider>

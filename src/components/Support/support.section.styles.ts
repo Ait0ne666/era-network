@@ -14,26 +14,27 @@ export const PageWrapper = styled.div`
     background-position-y: -10%;
 `
 
-export const HelpWrapper = styled.div`
-  
-    width: 460px;
-    height: 735px;
+export const SupportWrapper = styled.div`
+    width:100%;
+    max-width: 460px;
+    min-height: 735px;
+ 
     background: #FFFFFF;
     border-radius: 12px;  
     padding: 39px 40px 85px 40px;
     box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
     border-color: #E5E5E5;
-    border-width 1;
-    margin: 2em auto;
+   
+    
     margin-top: 120px;
     margin-bottom: 100px;
 `
 
 
 
-export const HelpContainer = styled.div`
+export const SupportContainer = styled.div`
     width: 100%;
-    max-width: 1200px;
+    
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -62,7 +63,7 @@ margin-top: 4px;
 `
 
 
-export const HelpTitle = styled.h3`
+export const SupportTitle = styled.h3`
     font-family: Montserrat;
     font-style: normal;
     font-weight: 600;
@@ -88,6 +89,7 @@ export const TextArea = styled.textarea`
     font-size: 16px;
     line-height: 20px;
     padding: 24px 25px;
+    resize: none;
 `
 
 export const Submit = styled.button`

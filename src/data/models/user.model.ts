@@ -2,8 +2,7 @@ export interface UserModel {
     id: Number,
     username: String,
     email: String,
-    telegram?: String 
-    
+    telegram?: String
 }
 
 
