@@ -36,8 +36,8 @@ const MediumSection: React.FC = () => {
                     </SectionHeader>
                     <Articles>
                         {
-                            articles.map(article => {
-                                return <ArticleItem>
+                            articles.map((article, index) => {
+                                return <ArticleItem key={index}>
                                     <ArticleHeader>
                                         <MediumSVG/>
                                         {article.title}

@@ -47,6 +47,9 @@ interface NavigationItemProps {
 }
 
 export const NavigationItem = styled.span<NavigationItemProps>`
+display: flex;
+flex-direction: row;
+align-items: center;
 font-style: normal;
 font-size: 16px;
 line-height: 20px;
@@ -62,6 +65,9 @@ transition-duration: 0.1s;
 
 &:hover {
     opacity: 0.8;
+}
+>svg {
+    margin-left: 5px;
 }
 `
 

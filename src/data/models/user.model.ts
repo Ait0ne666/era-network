@@ -21,9 +21,9 @@ export class User implements UserModel {
         email,
         telegram
     }: UserModel) {
-        this.id = id,
-        this.username = username,
-        this.email = email,
+        this.id = id
+        this.username = username
+        this.email = email
         this.telegram = telegram
     }
 

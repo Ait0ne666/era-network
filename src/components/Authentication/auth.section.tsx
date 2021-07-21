@@ -20,6 +20,7 @@ import {
 import * as yup from "yup";
 
 import {loginUser} from "../../redux/user/user.actions";
+import { useDispatch } from "react-redux";
 const validationSchema = yup.object().shape({
     login : yup.string().trim().required("Обязательное поле"),
     password: yup
@@ -31,12 +32,13 @@ const validationSchema = yup.object().shape({
 const AuthSection: React.FC = () => {
     const { language } = useLanguage();
     const [loading, setLoading] = useState(false)
+    const dispatch = useDispatch()
     const handleSubmit = async(values: { login: string; password: string })=>{
         setLoading(true);
 
-        // loginUser({username: values.login, password: values.password})
+        dispatch(loginUser({username: values.login, password: values.password}))
 
-        setTimeout(()=>setLoading(false), 1000);
+        // setTimeout(()=>setLoading(false), 1000);
     }
 
 

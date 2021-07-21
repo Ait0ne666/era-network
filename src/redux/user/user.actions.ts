@@ -27,18 +27,20 @@ export const loginUserError = (message: String): UserActionTypes => ({
 
 
 export const loginUser = (payload: LoginPayloadType) => {
+    console.log(1)
     return async (dispatch: Dispatch) => {
         let repository = new AuthRepositoryImpl()
         
-        
+        console.log(6)
         dispatch(loginUserPending())
-
+        console.log(5)
         try {
             let result = await repository.login(payload.username, payload.password)
-
             if (! (result instanceof User)) {
+                console.log(2)
                 dispatch(loginUserError(result.message))
             } else {
+                console.log(3)
                 dispatch(loginUserSuccess(result))
             }
 
@@ -51,6 +53,12 @@ export const loginUser = (payload: LoginPayloadType) => {
 
     }
 }
+
+
+
+export const logoutUser = (): UserActionTypes => ({
+    type: constants.LOGOUT_USER,
+})
 
 
 

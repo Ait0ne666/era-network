@@ -66,7 +66,7 @@ const ProductsSection: React.FC = () => {
 
                                         {
                                             parts.map((part, index) => {
-                                                return <ProductItem>
+                                                return <ProductItem key={index}>
                                                     <div>.</div>
                                                     <span>{part}</span>
                                                 </ProductItem>

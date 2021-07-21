@@ -4,6 +4,7 @@ export const constants = {
     LOGIN_USER_PENDING: 'LOGIN_USER_PENDING',
     LOGIN_USER_SUCCESS: 'LOGIN_USER_SUCCESS',
     LOGIN_USER_ERROR: 'LOGIN_USER_ERROR',
+    LOGOUT_USER: 'LOGOUT_USER',
 }
 
 
@@ -28,10 +29,14 @@ interface LoginActionError {
     payload: String
 } 
 
+interface LogoutAction {
+    type: typeof constants.LOGOUT_USER
+}
 
 
 
-export type UserActionTypes = LoginActionPending | LoginActionError | LoginActionSuccess
+
+export type UserActionTypes = LoginActionPending | LoginActionError | LoginActionSuccess |LogoutAction
 
 
 export interface UserState {

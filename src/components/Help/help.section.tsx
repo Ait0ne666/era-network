@@ -21,11 +21,14 @@ const validationSchema = yup.object().shape({
         .email("Введите корректный email")
         .required("Обязательное поле"),
     message: yup.string().trim().required("Обязательное поле"),
+    
 });
 
 const HelpSection: React.FC = () => {
     const {currentLanguage, language} = useLanguage();
     const [loading, setLoading] = useState(false)
+
+
     const handleSubmit = async (values: { name: string, email: string; message: string }) => {
         setLoading(true);
 

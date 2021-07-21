@@ -197,11 +197,11 @@ const AboutSection: React.FC = () => {
                 {
                    new Array(11).fill(0).map((n, value) => {
                     if (value === 0) {
-                        return <div>0</div>;
+                        return <div key={value}>0</div>;
                         } else if (value < 10) {
-                        return <div>{`${value}${currentLanguage === "en" ? "y" : "г"}`}</div>;
+                        return <div key={value}>{`${value}${currentLanguage === "en" ? "y" : "г"}`}</div>;
                         } else {
-                        return <div></div>;
+                        return <div key={value}></div>;
                         }
                    })
                 }

@@ -7,7 +7,8 @@ export interface ILang {
         support: string,
         auth: string,
         signIn: string,
-        signUp: string
+        signUp: string,
+        profile: string
     },
     footer: {
         agreement: string,
@@ -150,7 +151,8 @@ export const languages: {'en': ILang, 'Russian': ILang} = {
             support: 'Support',
             auth: 'Sign Up / Sign In',
             signIn: 'Sign Up',
-            signUp: 'Sign In'
+            signUp: 'Sign In',
+            profile: 'Profile'
         },
         footer: {
             agreement: 'User agreement',
@@ -292,7 +294,8 @@ export const languages: {'en': ILang, 'Russian': ILang} = {
             support: 'Поддержка',
             auth: 'Вход / Регистрация',
             signIn: 'Вход',
-            signUp: 'Регистрация'
+            signUp: 'Регистрация',
+            profile: 'Профиль'
         },
         footer: {
             agreement: 'Пользовательское соглашение',

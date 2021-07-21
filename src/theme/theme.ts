@@ -24,27 +24,27 @@ export const themes: ThemesType = {
         },
         style: {
             colors: {
-                main: "FCE34C",
-                accent: "1B5CF5",
-                positive: "3DAA9D",
-                negative: "FE5B37",
-                disabled: "FDF1A5",
+                main: "#FCE34C",
+                accent: "#1B5CF5",
+                positive: "#3DAA9D",
+                negative: "#FE5B37",
+                disabled: "#FDF1A5",
                 mainGradient: {
-                    start: "FDE539",
-                    end: "FF5C00",
+                    start: "#FDE539",
+                    end: "#FF5C00",
                 },
-                headers: "1B1919",
-                mainText: "221F20",
-                subtitle: "C4C4C4",
-                bg: "FFFFFF",
-                input : "EEEDF5",
-                infoBg: "FF5C00",
+                headers: "#1B1919",
+                mainText: "#221F20",
+                subtitle: "#C4C4C4",
+                bg: "#FFFFFF",
+                input : "#EEEDF5",
+                infoBg: "#FF5C00",
                 app: {
-                    bg: "222222",
-                    text: "FFFFFF",
-                    subtitle: "C4C4C4",
-                    textField: "313131",
-                    infoBg: "FF5C00"
+                    bg: "#222222",
+                    text: "#FFFFFF",
+                    subtitle: "#C4C4C4",
+                    textField: "#313131",
+                    infoBg: "#FF5C00"
                 }
             }
         }
@@ -66,27 +66,27 @@ export const themes: ThemesType = {
         },
         style: {
             colors: {
-                main: "FCE34C",
-                accent: "1B5CF5",
-                positive: "3DAA9D",
-                negative: "FE5B37",
-                disabled: "FDF1A5",
+                main: "#FCE34C",
+                accent: "#1B5CF5",
+                positive: "#3DAA9D",
+                negative: "#FE5B37",
+                disabled: "#FDF1A5",
                 mainGradient: {
-                    start: "FDE539",
-                    end: "FF5C00",
+                    start: "#FDE539",
+                    end: "#FF5C00",
                 },
-                headers: "1B1919",
-                mainText: "221F20",
-                subtitle: "C4C4C4",
-                bg: "FFFFFF",
-                input : "EEEDF5",
-                infoBg: "FF5C00",
+                headers: "#1B1919",
+                mainText: "#221F20",
+                subtitle: "#C4C4C4",
+                bg: "#FFFFFF",
+                input : "#EEEDF5",
+                infoBg: "#FF5C00",
                 app: {
-                    bg: "222222",
-                    text: "FFFFFF",
-                    subtitle: "C4C4C4",
-                    textField: "313131",
-                    infoBg: "FF5C00"
+                    bg: "#222222",
+                    text: "#FFFFFF",
+                    subtitle: "#C4C4C4",
+                    textField: "#313131",
+                    infoBg: "#FF5C00"
                 }
             }
         }

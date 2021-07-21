@@ -1,5 +1,5 @@
 import LanguageProvider from "../LanguageProvider/language.provider";
-import { Switch, Route, useLocation } from "react-router-dom";
+import { Switch, Route, useLocation, Redirect } from "react-router-dom";
 import LandingPage from "../../pages/landing/landing.page";
 import { useSelector, useDispatch } from "react-redux";
 import { settingsSelectors } from "../../redux/settings/settings.selectors";
@@ -15,6 +15,7 @@ import HelpSection from "../Help/help.section";
 import AuthSection from "../Authentication/auth.section";
 import Authentication from "../../pages/Authentication/authentication";
 import Help from "../../pages/Help/help";
+import { userSelectors } from "../../redux/user/user.selectors";
 
 
 
@@ -24,6 +25,7 @@ import Help from "../../pages/Help/help";
 const Layout: React.FC = () => {
   const dispatch = useDispatch();
   const {pathname} = useLocation()
+  const user = useSelector(userSelectors.user)
 
   useEffect(() => {
     dispatch(getMediumArticles());
@@ -40,6 +42,8 @@ const Layout: React.FC = () => {
 
   const theme = useSelector(settingsSelectors.theme);
 
+  console.log(user)
+
   return (
     <ThemeProvider theme={themes[theme]}>
       <LanguageProvider>
@@ -52,11 +56,16 @@ const Layout: React.FC = () => {
             <Route exact path="/styles">
               <CorporateStylesPage />
             </Route>
-            <Route exact path="/help">
+            <Route exact path="/support">
               <Help/>
             </Route>
+
             <Route exact path="/auth">
-              <Authentication/>
+              {
+                user? 
+                <Redirect to='/'/>
+                :<Authentication/>
+              }
             </Route>
           </Switch>
           <Footer />
