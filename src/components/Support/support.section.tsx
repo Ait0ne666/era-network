@@ -15,7 +15,6 @@ import {Spinner} from "@chakra-ui/spinner";
 import { useToast } from "@chakra-ui/react";
 import {useDispatch, useSelector} from "react-redux";
 import {supportSelectors} from "../../redux/support/support.selectors";
-import {send} from "../../data/data-sources/support_remote_data_source";
 import {clearSupportError, sendSupport} from "../../redux/support/support.actions";
 
 const validationSchema = yup.object().shape({

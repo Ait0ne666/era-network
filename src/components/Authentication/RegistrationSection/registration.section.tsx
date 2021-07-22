@@ -1,11 +1,9 @@
 import {Input, Label} from "../../../styles/common.styles";
 import {Formik} from "formik";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {useLanguage} from "../../LanguageProvider/language.provider";
 import {Spinner} from '@chakra-ui/spinner'
 import infoImg from  "../../../assets/RightImg.svg";
-
-
 import {
     InputContainer,
     FormContainer,
@@ -15,8 +13,7 @@ import {
 } from "../auth.styles";
 
 import * as yup from "yup";
-
-import {loginUser} from "../../../redux/user/user.actions";
+import {clearUserError, registerUser} from "../../../redux/user/user.actions";
 import {
     Checkbox,
     CheckboxContainer,
@@ -25,26 +22,32 @@ import {
     NotePassword,
     RightImg
 } from "./registration.section.styles";
+import {useToast} from "@chakra-ui/react";
+import {useDispatch, useSelector} from "react-redux";
+import {userSelectors} from "../../../redux/user/user.selectors";
 
 const validationSchema = yup.object().shape({
     username_invited : yup.string().trim().required("Обязательное поле"),
     username : yup.string().trim().required("Обязательное поле"),
-    email : yup.string().trim().required("Обязательное поле"),
+    email : yup.string().email().required("Обязательное поле"),
     password: yup
         .string()
         .trim()
-        .required("Обязательное поле"),
+        .required("Обязательное поле")
+        .min(9, "Короткий пароль")
+        .matches(/^((?=.*\d)(?=.*[A-Z]).+)$/, "Не все символы соблюдены"),
     password_repeat: yup
         .string()
         .trim()
-        .required("Обязательное поле"),
-    telegram: yup.string().trim().required("Обязательное поле"),
+        .oneOf([yup.ref("password_repeat"), null], "Пароли не совпадают"),
+    telegram: yup.string().trim().required("Обязательное поле").matches(/@+/,"Неверный формат"),
     agreement: yup.boolean().isTrue("Необходимо принять соглашение")
 });
 
 const RegSection: React.FC = () => {
     const { language } = useLanguage();
-    const [loading, setLoading] = useState(false)
+    const loading = useSelector(userSelectors.loading)
+    const error = useSelector(userSelectors.error)
     const handleSubmit = async(values: { username_invited: string;
     username: string;
     email: string;
@@ -52,9 +55,37 @@ const RegSection: React.FC = () => {
     password_repeat: string;
     telegram: string})=>{
 
-        // loginUser({username: values.login, password: values.password})
+        registerUser({
+            username_invited: values.username_invited,
+            username: values.username,
+            email: values.email,
+            password: values.password,
+            telegram: values.telegram
+        })
 
     }
+
+    const dispatch = useDispatch();
+    const toast = useToast()
+    const showErrorToast = (message: String, status: "error" | "info" | "warning" | "success", title: string) => {
+        toast({
+            title: title ? title : "Ошибка",
+            description: message,
+            position: "top-right",
+            status: status ? status : "error",
+            duration: 8000,
+            isClosable: true,
+        });
+    };
+
+    useEffect(()=>{
+            if (error ){
+                showErrorToast('','error',error);
+                dispatch(dispatch(clearUserError()))
+            }
+        },
+        [error])
+
     return(
                 <Formik
                     initialValues={{
@@ -124,15 +155,16 @@ const RegSection: React.FC = () => {
                                         onChange={handleChange}
                                         placeholder={language.auth.registration.password_repeat_placeholder}
                                     />
-                                    <NotePassword>{language.auth.registration.password_info}</NotePassword>
                                     <Error>{errors.password_repeat}</Error>
+                                    <NotePassword>{language.auth.registration.password_info}</NotePassword>
+
                                 </InputContainer>
                                 <InputContainer>
                                     <Label>{language.auth.registration.telegram_title} <RightImg src={infoImg} /> </Label>
                                     <Input
                                         type="text"
-                                        name="password"
-                                        value={values.password}
+                                        name="telegram"
+                                        value={values.telegram}
                                         onChange={handleChange}
                                         placeholder={language.auth.registration.telegram_placeholder}
                                     />

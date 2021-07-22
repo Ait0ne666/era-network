@@ -29,6 +29,25 @@ export const userReducer = (state=INITIAL_STATE, action:UserActionTypes) => {
                 error: undefined,
                 user: (action as any).payload as String
             }
+        case constants.REGISTER_USER_PENDING:
+            return {
+                ...state,
+                loading: true,
+                error: undefined,
+            }
+        case constants.REGISTER_USER_ERROR:
+            return {
+                ...state,
+                loading: false,
+                error: (action as any).payload as String
+            }
+        case constants.REGISTER_USER_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                error: undefined,
+                // user: (action as any).payload as String
+            }
         default:
             return state
     }

@@ -14,13 +14,17 @@ import playImg from "../../../assets/PlayImg.png";
 import {Formik} from "formik";
 import {Input, Label} from "../../../styles/common.styles";
 import {Spinner} from "@chakra-ui/spinner";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import * as yup from "yup";
 import {useLanguage} from "../../LanguageProvider/language.provider";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {supportSelectors} from "../../../redux/support/support.selectors";
 import {Link} from "react-router-dom";
 import {LinkBox, LinkButton, LinkImg, LinkText} from "./login.styles";
+import {useToast} from "@chakra-ui/react";
+import {clearSupportError} from "../../../redux/support/support.actions";
+import {clearUserError, loginUser} from "../../../redux/user/user.actions";
+import {userSelectors} from "../../../redux/user/user.selectors";
 
 
 const validationSchema = yup.object().shape({
@@ -33,11 +37,34 @@ const validationSchema = yup.object().shape({
 
 const LoginSection: React.FC = () => {
     const { language } = useLanguage();
-    const loading = useSelector(supportSelectors.loading);
-    const error = useSelector(supportSelectors.error);
-    const handleSubmit = async(values: { login: string; password: string })=>{
+    const loading = useSelector(userSelectors.loading);
+    const error = useSelector(userSelectors.error);
 
+
+    const dispatch = useDispatch();
+    const toast = useToast()
+    const showErrorToast = (message: String, status: "error" | "info" | "warning" | "success", title: string) => {
+        toast({
+            title: title ? title : "Ошибка",
+            description: message,
+            position: "top-right",
+            status: status ? status : "error",
+            duration: 8000,
+            isClosable: true,
+        });
+    };
+
+    const handleSubmit = async(values: { login: string; password: string })=>{
+        dispatch(loginUser({username: values.login, password:values.password}))
     }
+
+    useEffect(()=>{
+            if (error ){
+                showErrorToast('','error',error);
+                dispatch(clearUserError())
+            }
+        },
+        [error])
 
     const isLogin = useState(false)
 
