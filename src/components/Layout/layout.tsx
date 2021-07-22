@@ -11,11 +11,9 @@ import Footer from "../Footer/footer";
 import { useEffect } from "react";
 import { getMediumArticles } from "../../redux/content/content.actions";
 import CorporateStylesPage from "../../pages/CorporateStyles/corporateStyles";
-import SupportSection from "../Support/support.section";
-import Auth from "../Authentication/auth";
-import Authentication from "../../pages/Authentication/authentication";
-import Support from "../../pages/Support/support";
-import RegSection from "../Authentication/RegistrationSection/registration.section";
+import AuthenticationPage from "../../pages/Authentication/authentication.page";
+import SupportPage from "../../pages/Support/support.page";
+import BlockchainPage from "../../pages/Blockchain/blockchain.page";
 
 
 
@@ -54,10 +52,13 @@ const Layout: React.FC = () => {
               <CorporateStylesPage />
             </Route>
             <Route exact path="/help">
-              <Support/>
+              <SupportPage/>
             </Route>
             <Route exact path="/auth">
-              <Authentication/>
+              <AuthenticationPage/>
+            </Route>
+            <Route exact path="/blockchain">
+              <BlockchainPage/>
             </Route>
           </Switch>
           <Footer />

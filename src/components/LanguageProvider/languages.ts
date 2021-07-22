@@ -48,8 +48,10 @@ export interface ILang {
         registration:{
             username_title: string,
             username_placeholder: string,
+            username_tooltip: string,
             username_invited_title: string,
             username_invited_placeholder: string,
+            username_invited_tooltip: string,
             email_title: string,
             email_placeholder: string,
             password_title: string,
@@ -59,6 +61,7 @@ export interface ILang {
             password_repeat_placeholder: string,
             telegram_title: string,
             telegram_placeholder: string,
+            telegram_tooltip:string,
             agreement: string,
             agreement_link: string,
             submit: string
@@ -214,8 +217,10 @@ export const languages: {'en': ILang, 'Russian': ILang} = {
             registration:{
                 username_title: "Ваш никнейм",
                 username_placeholder: "Придумайте ваш никнейм",
+                username_tooltip: "Чтобы упростить переводы, вместо длинного адреса кошелька вы можете отправить ваш никнейм. Аналогично для вас - при отправке монет другим пользователям, вам достаточно ввести их никнейм.",
                 username_invited_title: "Никнейм пригласившего",
                 username_invited_placeholder: "Введите никнейм",
+                username_invited_tooltip: "Если вы регистрируетесь без приглашения, оставьте поле пустым. А если вы хотите вступить в команду пригласившего вас пользователя, введите его никнейм или перейдите по его пригласительной ссылке.",
                 email_title: "Email",
                 email_placeholder: "Email",
                 password_title: "Введите пароль",
@@ -225,6 +230,7 @@ export const languages: {'en': ILang, 'Russian': ILang} = {
                 password_repeat_placeholder: "Password-123",
                 telegram_title: "Telegram",
                 telegram_placeholder: "@eracoin",
+                telegram_tooltip:"Укажите ваш никнейм в Telegram, если хотите, чтобы назначенный системой наставник с вами связался и помог с запуском",
                 agreement: "Я согласен ",
                 agreement_link: "с политикой конфиденциальности и пользовательским соглашением",
                 submit: "Создать аккаунт"
@@ -377,8 +383,10 @@ export const languages: {'en': ILang, 'Russian': ILang} = {
             registration:{
                 username_title: "Ваш никнейм",
                 username_placeholder: "Придумайте ваш никнейм",
+                username_tooltip:"Чтобы упростить переводы, вместо длинного адреса кошелька вы можете отправить ваш никнейм. Аналогично для вас - при отправке монет другим пользователям, вам достаточно ввести их никнейм.",
                 username_invited_title: "Никнейм пригласившего",
                 username_invited_placeholder: "Введите никнейм",
+                username_invited_tooltip:"Если вы регистрируетесь без приглашения, оставьте поле пустым. А если вы хотите вступить в команду пригласившего вас пользователя, введите его никнейм или перейдите по его пригласительной ссылке.",
                 email_title: "Email",
                 email_placeholder: "Email",
                 password_title: "Введите пароль",
@@ -388,9 +396,11 @@ export const languages: {'en': ILang, 'Russian': ILang} = {
                 password_repeat_placeholder: "Password-123",
                 telegram_title: "Telegram",
                 telegram_placeholder: "@eracoin",
+                telegram_tooltip:"Укажите ваш никнейм в Telegram, если хотите, чтобы назначенный системой наставник с вами связался и помог с запуском",
                 agreement: "Я согласен ",
                 agreement_link: "с политикой конфиденциальности и пользовательским соглашением",
-                submit: "Создать аккаунт"
+                submit: "Создать аккаунт",
+
             },
         },
         general: {

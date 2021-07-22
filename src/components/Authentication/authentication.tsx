@@ -22,7 +22,7 @@ const validationSchema = yup.object().shape({
         .required("Обязательное поле"),
 });
 
-const Auth: React.FC = () => {
+const Authentication: React.FC = () => {
     const { language } = useLanguage();
     const loading = useSelector(supportSelectors.loading);
     const error = useSelector(supportSelectors.error);
@@ -49,7 +49,7 @@ const Auth: React.FC = () => {
                     </TitleBox>
 
                     {
-                        isLogin? <LoginSection/>:<RegistrationSection/>
+                        isLogin? <RegistrationSection/>:<LoginSection/>
                     }
                 </AuthWrapper>
 
@@ -57,4 +57,4 @@ const Auth: React.FC = () => {
     )
 }
 
-export default Auth;
+export default Authentication;
