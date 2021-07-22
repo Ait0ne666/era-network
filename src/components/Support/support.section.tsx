@@ -64,7 +64,8 @@ const SupportSection: React.FC = () => {
         [success])
 
     useEffect(()=>{
-        return ()=>{dispatch(clearSupportError())}
+        return ()=>{
+            dispatch(clearSupportError())}
     },)
 
     return (

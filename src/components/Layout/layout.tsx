@@ -16,34 +16,29 @@ import AuthSection from "../Authentication/auth.section";
 import Authentication from "../../pages/Authentication/authentication";
 import { userSelectors } from "../../redux/user/user.selectors";
 import Support from "../../pages/Support/support";
+import Application from "../../pages/Application/application";
 // import RegSection from "../Authentication/registration.section";
-
-
-
-
-
 
 const Layout: React.FC = () => {
   const dispatch = useDispatch();
-  const {pathname} = useLocation()
-  const user = useSelector(userSelectors.user)
+  const { pathname } = useLocation();
+  const user = useSelector(userSelectors.user);
 
   useEffect(() => {
     dispatch(getMediumArticles());
   }, [dispatch]);
 
-
   useEffect(() => {
     window.scroll({
       top: 0,
       left: 0,
-      behavior: 'smooth'
-    })
-  }, [pathname])
+      behavior: "smooth",
+    });
+  }, [pathname]);
 
   const theme = useSelector(settingsSelectors.theme);
 
-  console.log(user)
+  console.log(user);
 
   return (
     <ThemeProvider theme={themes[theme]}>
@@ -52,25 +47,24 @@ const Layout: React.FC = () => {
           <Header />
           <Switch>
             <Route exact path="/">
-              <LandingPage />
+              {user ? <Redirect to="/app" /> : <LandingPage />}
             </Route>
             <Route exact path="/styles">
               <CorporateStylesPage />
             </Route>
-            <Route exact path="/help">
-              <Support/>
+            <Route exact path="/support">
+              <Support />
             </Route>
 
             <Route exact path="/auth">
-              {
-                user? 
-                <Redirect to='/'/>
-                :<Authentication/>
-              }
+              {user ? <Redirect to="/" /> : <Authentication />}
             </Route>
             {/* <Route exact path="/reg">
               <RegSection/>
             </Route> */}
+            <Route path="/app">
+              {!user ? <Redirect to="/auth" /> : <Application />}
+            </Route>
           </Switch>
           <Footer />
         </ChakraProvider>

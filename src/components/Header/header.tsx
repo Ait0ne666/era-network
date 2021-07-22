@@ -47,7 +47,7 @@ const Header: React.FC = () => {
         </LogoContainer>
         <NavigationContainer>
           <Link to="/">
-            <NavigationItem active={location.pathname === "/"}>
+            <NavigationItem active={location.pathname === "/"||location.pathname.includes("/app")}>
               {language.header.main}
             </NavigationItem>
           </Link>
@@ -69,8 +69,8 @@ const Header: React.FC = () => {
         </NavigationContainer>
         <SettingsControls>
           {user ? (
-            <NavigationItem active={location.pathname === "/profile"}>
-              <Link to="/profile">{language.header.profile}</Link>
+            <NavigationItem active={location.pathname === "/app/profile"}>
+              <Link to="/app/profile">{language.header.profile}</Link>
               <LogoutSVG onClick={handleLogout}/>
             </NavigationItem>
           ) : (

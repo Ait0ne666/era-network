@@ -7,7 +7,8 @@ export const login = async (username: String, password: String): Promise<User | 
     const tempUser: User = new User({
         email: 'bonafide112358@gmail.com',
         username: 'ait0ne',
-        id: 1
+        id: 1,
+        isTariffPaid: true
     }) 
 
 
