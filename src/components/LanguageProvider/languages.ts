@@ -35,32 +35,35 @@ export interface ILang {
     name_placeholder: string;
     mes_placeholder: string;
   };
-  auth: {
-    login_title: string;
-    password_title: string;
-    login_placeholder: string;
-    password_placeholder: string;
-    inscription: string;
-    submitButton: string;
-    changePassword: string;
-  };
-  registration: {
-    username_title: string;
-    username_placeholder: string;
-    username_invited_title: string;
-    username_invited_placeholder: string;
-    email_title: string;
-    email_placeholder: string;
-    password_title: string;
-    password_info: string;
-    password_placeholder: string;
-    password_repeat_title: string;
-    password_repeat_placeholder: string;
-    telegram_title: string;
-    telegram_placeholder: string;
-    agreement: string;
-    submit: string;
-  };
+  auth:{
+    login:{
+        login_title: string,
+        password_title: string,
+        login_placeholder: string,
+        password_placeholder: string,
+        inscription: string,
+        submitButton: string,
+        changePassword: string,
+    }
+    registration:{
+        username_title: string,
+        username_placeholder: string,
+        username_invited_title: string,
+        username_invited_placeholder: string,
+        email_title: string,
+        email_placeholder: string,
+        password_title: string,
+        password_info: string,
+        password_placeholder: string,
+        password_repeat_title: string,
+        password_repeat_placeholder: string,
+        telegram_title: string,
+        telegram_placeholder: string,
+        agreement: string,
+        agreement_link: string,
+        submit: string
+    },
+},
   general: {
     title: string;
     subtitle: string;
@@ -166,6 +169,7 @@ export interface ILang {
       unpaid: string;
     };
   };
+  
 }
 
 export const languages: { en: ILang; Russian: ILang } = {
@@ -207,34 +211,36 @@ export const languages: { en: ILang; Russian: ILang } = {
       name_placeholder: "",
       mes_placeholder: "",
     },
-    auth: {
-      login_title: "Press _____",
-      password_title: "Press password",
-      login_placeholder: "",
-      password_placeholder: "",
-      inscription: "",
-      submitButton: "Sign In",
-      changePassword: "Change password???",
-    },
-    registration: {
-      username_title: "Ваш никнейм",
-      username_placeholder: "Придумайте ваш никнейм",
-      username_invited_title: "Никнейм пригласившего",
-      username_invited_placeholder: "Введите никнейм",
-      email_title: "Email",
-      email_placeholder: "Email",
-      password_title: "Введите пароль",
-      password_info:
-        "Пароль должен содержать минимум 1 заглавную букву, 1 цифру. Минимальная длина пароля составляет 9 символов. Необходим авторизации на сайте. В приложении вход по Seed-фразу.",
-      password_placeholder: "Password-123",
-      password_repeat_title: "Повторите пароль",
-      password_repeat_placeholder: "Password-123",
-      telegram_title: "Telegram",
-      telegram_placeholder: "@eracoin",
-      agreement:
-        "Я согласен с политикой конфиденциальности и пользовательским соглашением",
-      submit: "Создать аккаунт",
-    },
+    auth:{
+      login:{
+          login_title: "Press _____",
+          password_title: "Press password",
+          login_placeholder: "",
+          password_placeholder: "",
+          inscription:"",
+          submitButton: "Sign In",
+          changePassword: "Change password???"
+      },
+      registration:{
+          username_title: "Ваш никнейм",
+          username_placeholder: "Придумайте ваш никнейм",
+          username_invited_title: "Никнейм пригласившего",
+          username_invited_placeholder: "Введите никнейм",
+          email_title: "Email",
+          email_placeholder: "Email",
+          password_title: "Введите пароль",
+          password_info: "Пароль должен содержать минимум 1 заглавную букву, 1 цифру. Минимальная длина пароля составляет 9 символов. Необходим авторизации на сайте. В приложении вход по Seed-фразу.",
+          password_placeholder: "Password-123",
+          password_repeat_title: "Повторите пароль",
+          password_repeat_placeholder: "Password-123",
+          telegram_title: "Telegram",
+          telegram_placeholder: "@eracoin",
+          agreement: "Я согласен ",
+          agreement_link: "с политикой конфиденциальности и пользовательским соглашением",
+          submit: "Создать аккаунт"
+      },
+  },
+
     general: {
       title:
         "В ERA ваше устройство является валидатором сети, делегатором монет и пользователем продуктов одновременно",
@@ -387,34 +393,35 @@ export const languages: { en: ILang; Russian: ILang } = {
       name_placeholder: "Иван",
       mes_placeholder: "Введите текст вашего обращения",
     },
-    auth: {
-      login_title: "Введите номер кошелька или Никнейм",
-      password_title: "Введите пароль",
-      login_placeholder: "ERA-XXXX",
-      password_placeholder: "Password-123",
-      inscription: "Убедитесь, что вы посещаете правильный URL-адрес",
-      submitButton: "Войти",
-      changePassword: "Установить пароль",
-    },
-    registration: {
-      username_title: "Ваш никнейм",
-      username_placeholder: "Придумайте ваш никнейм",
-      username_invited_title: "Никнейм пригласившего",
-      username_invited_placeholder: "Введите никнейм",
-      email_title: "Email",
-      email_placeholder: "Email",
-      password_title: "Введите пароль",
-      password_info:
-        "Пароль должен содержать минимум 1 заглавную букву, 1 цифру. Минимальная длина пароля составляет 9 символов. Необходим авторизации на сайте. В приложении вход по Seed-фразу.",
-      password_placeholder: "Password-123",
-      password_repeat_title: "Повторите пароль",
-      password_repeat_placeholder: "Password-123",
-      telegram_title: "Telegram",
-      telegram_placeholder: "@eracoin",
-      agreement:
-        "Я согласен с политикой конфиденциальности и пользовательским соглашением",
-      submit: "Создать аккаунт",
-    },
+    auth:{
+      login:{
+          login_title: "Введите номер кошелька или Никнейм",
+          password_title: "Введите пароль",
+          login_placeholder: "ERA-XXXX",
+          password_placeholder: "Password-123",
+          inscription: "Убедитесь, что вы посещаете правильный URL-адрес",
+          submitButton: "Войти",
+          changePassword: "Установить пароль"
+      },
+      registration:{
+          username_title: "Ваш никнейм",
+          username_placeholder: "Придумайте ваш никнейм",
+          username_invited_title: "Никнейм пригласившего",
+          username_invited_placeholder: "Введите никнейм",
+          email_title: "Email",
+          email_placeholder: "Email",
+          password_title: "Введите пароль",
+          password_info: "Пароль должен содержать минимум 1 заглавную букву, 1 цифру. Минимальная длина пароля составляет 9 символов. Необходим авторизации на сайте. В приложении вход по Seed-фразу.",
+          password_placeholder: "Password-123",
+          password_repeat_title: "Повторите пароль",
+          password_repeat_placeholder: "Password-123",
+          telegram_title: "Telegram",
+          telegram_placeholder: "@eracoin",
+          agreement: "Я согласен ",
+          agreement_link: "с политикой конфиденциальности и пользовательским соглашением",
+          submit: "Создать аккаунт"
+      },
+  },
     general: {
       title:
         "В ERA ваше устройство является валидатором сети, делегатором монет и пользователем продуктов одновременно",

@@ -11,8 +11,6 @@ display: flex;
 flex-direction: row;
 `
 
-
-
 export const SectionInfo = styled.div`
 display: flex;
 flex-direction: column;

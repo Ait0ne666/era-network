@@ -12,12 +12,18 @@ import { useEffect } from "react";
 import { getMediumArticles } from "../../redux/content/content.actions";
 import CorporateStylesPage from "../../pages/CorporateStyles/corporateStyles";
 import SupportSection from "../Support/support.section";
-import AuthSection from "../Authentication/auth.section";
+import Auth from "../Authentication/auth";
 import Authentication from "../../pages/Authentication/authentication";
 import { userSelectors } from "../../redux/user/user.selectors";
 import Support from "../../pages/Support/support";
 import Application from "../../pages/Application/application";
-// import RegSection from "../Authentication/registration.section";
+
+import RegSection from "../Authentication/RegistrationSection/registration.section";
+
+
+
+
+
 
 const Layout: React.FC = () => {
   const dispatch = useDispatch();

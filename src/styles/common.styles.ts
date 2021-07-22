@@ -57,12 +57,18 @@ export const PageContainer = styled.div`
 `
 
 export const Label = styled.label`
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-between;
     font-family: Montserrat;
     font-style: normal;
     font-weight: bold;
     font-size: 16px;
     line-height: 20px;
     margin-bottom: 4px;
+    
 `
 
 export const Input = styled.input`

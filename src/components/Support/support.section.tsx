@@ -52,21 +52,20 @@ const SupportSection: React.FC = () => {
     }
 
     useEffect(()=>{
-        if (error )
+        if (error ){
             showErrorToast('','error',error);
+            dispatch(clearSupportError())
+        }
         },
         [error])
 
     useEffect(()=>{
-            if (success )
+            if (success ){
                 showErrorToast('','success', success);
+                dispatch(clearSupportError())
+        }
         },
         [success])
-
-    useEffect(()=>{
-        return ()=>{
-            dispatch(clearSupportError())}
-    },)
 
     return (
         <PageWrapper style={{

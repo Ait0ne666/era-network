@@ -28,11 +28,10 @@ export const sendSupport = (payload: SupportPayloadType) => {
         dispatch(sendSupportPending())
         try {
             let result = await repository.send(payload.name, payload.email, payload.message)
-            console.log("asdasdad")
-            if (result.message === "success") {
-                dispatch(sendSupportError(result.message))
-            } else {
+            if (result.type === "success") {
                 dispatch(sendSupportSuccess(result.message))
+            } else {
+                dispatch(sendSupportError(result.message))
             }
 
         } catch (err) {
